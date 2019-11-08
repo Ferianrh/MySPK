@@ -12,73 +12,73 @@
 				  <div class="form-group">
 					<label class="col-sm-2 control-label">Nama</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">
 					<label class="col-sm-2 control-label">Pekerjaan</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
 				  </div>
 				  <div class="form-group">
 					<label class="col-sm-2 control-label">Penghasilan</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">
 					<label class="col-sm-2 control-label">Sumber Penerangan</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
 				  </div>
 				  <div class="form-group">
 					<label class="col-sm-2 control-label">Nama</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
 				  </div>
 				  <div class="form-group">
 					<label class="col-sm-2 control-label">Bahan Bakar Masak</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">
 					<label class="col-sm-2 control-label">Membeli Pakaian</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">
 					<label class="col-sm-2 control-label">Sumber Air</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">
 					<label class="col-sm-2 control-label">Jenis Dinding</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">
 					<label class="col-sm-2 control-label">Jenis Lantai</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">
 					<label class="col-sm-2 control-label">Kemampuan Berobat</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">
 					<label class="col-sm-2 control-label">Pendidikan Terakhir</label>
 					<div class="col-sm-10">
-					  <input type="text" name="nama" class="form-control" placeholder="Nama" value="" >
+					  <input type="text" name="nama" class="form-control" placeholder="" value="" >
 					</div>
                   </div>
                   <div class="form-group">

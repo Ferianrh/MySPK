@@ -1,7 +1,7 @@
 <?php
 
 include_once("layout/View.php");
-
+//include("layout/menu_contents/form.php");
 $v = new View();
 
 if(isset($_GET["page"])) {
