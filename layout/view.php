@@ -13,7 +13,7 @@ Class View {
 	function __construct() {
 		$this->nav = "menu_contents/navbar.php";
         $this->side = "menu_contents/sidebar.php";
-        //$this->head = "menu_contents/header.php";
+        // $this->head = "menu_contents/header.php";
         $this->content = "menu_contents/content.php";
         $this->foot = "menu_contents/footer.php";
         $this->plugin = "menu_contents/plugins.php";
@@ -28,7 +28,7 @@ Class View {
 		$VAR = $this->data;
         include_once($this->nav);
         include_once($this->side);
-		//include_once($this->head);
+		// include_once($this->head);
 		include_once($this->content);
         include_once($this->foot);
         include_once($this->plugin);
