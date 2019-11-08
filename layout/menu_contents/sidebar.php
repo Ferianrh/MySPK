@@ -4,7 +4,7 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
+              <!--<a href="#" class="nav-link">
                 <div class="profile-image">
                   <img class="img-xs rounded-circle" src="images/faces/face8.jpg" alt="profile image">
                   <div class="dot-indicator bg-success"></div>
@@ -17,21 +17,21 @@
                   <i class="icon-bubbles"></i>
                   <div class="dot-indicator bg-danger"></div>
                 </div>
-              </a>
+              </a>-->
             </li>
             <li class="nav-item nav-category">
               <span class="nav-link">Dashboard</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="index.php">
                 <span class="menu-title">Dashboard</span>
                 <i class="icon-screen-desktop menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item nav-category"><span class="nav-link">UI Elements</span></li>
+            <li class="nav-item nav-category"><span class="nav-link">Data</span></li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Basic UI Elements</span>
+                <span class="menu-title">Input Data Penduduk</span>
                 <i class="icon-layers menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
