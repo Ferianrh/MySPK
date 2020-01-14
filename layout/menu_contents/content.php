@@ -1,4 +1,5 @@
   <!-- partial -->
+  
 <div class="main-panel">
           <div class="content-wrapper">
             <!-- Quick Action Toolbar Starts-->
@@ -11,16 +12,16 @@
                   </div>
                   <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
                     <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"> <i class="icon-user mr-2"></i> Input Data</button>
+                      <button type="button" class="btn px-0"> <i class="icon-user mr-2"></i> Edit Data penduduk</button>
                     </div>
                     <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-docs mr-2"></i> Create Quote</button>
+                      <button type="button" class="btn px-0"><i class="icon-docs mr-2"></i> -</button>
                     </div>
                     <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-folder mr-2"></i> Enter Payment</button>
+                      <button type="button" class="btn px-0"><i class="icon-folder mr-2"></i> -</button>
                     </div>
                     <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-book-open mr-2"></i>Create Invoice</button>
+                      <button type="button" class="btn px-0"><i class="icon-book-open mr-2"></i> -</button>
                     </div>
                   </div>
                 </div>

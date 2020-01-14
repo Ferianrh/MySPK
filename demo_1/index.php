@@ -1,16 +1,19 @@
 <?php
+if (empty($_SESSION['status'])){
+  header("Location : login.php");
 
-include_once("layout/View.php");
+}else{
+  include_once("layout/View.php");
 
-$v = new View();
+  $v = new View();
 
-if(isset($_GET["page"])) {
-	$PAGE = $_GET["page"];
+  if(isset($_GET["page"])) {
+    $PAGE = $_GET["page"];
+  }
+  else {
+    $PAGE = "home";
+  }
 }
-else {
-	$PAGE = "home";
-}
-
 $v->render_all();
 ?>  
 <!DOCTYPE html>
