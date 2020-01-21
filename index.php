@@ -1,6 +1,6 @@
 <?php
 
-if (empty($_SESSION['status'])){
+if (isset($_SESSION['status'])){
       header('Location: login.php');
       exit;
     
