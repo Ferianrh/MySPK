@@ -62,7 +62,7 @@
             <li class="nav-item">
               <a class="nav-link" href="logout.php">
                 <span class="menu-title">Logout</span>
-                <i class="icon-grid menu-icon"></i>
+                <i class="icon-logout menu-icon"></i>
               </a>
             </li>
             
