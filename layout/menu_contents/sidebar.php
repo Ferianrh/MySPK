@@ -60,11 +60,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Tables</span>
+              <a class="nav-link" href="logout.php">
+                <span class="menu-title">Logout</span>
                 <i class="icon-grid menu-icon"></i>
               </a>
             </li>
+            
           </ul>
         </nav>
         
