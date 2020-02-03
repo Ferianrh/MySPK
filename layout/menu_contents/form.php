@@ -99,11 +99,13 @@
                       <button type="submit" name="btn_submit" class="btn btn-sm btn-primary">Simpan</button>
                     
                       <a href="index.php?page=karyawan&sub=list" class="btn btn-sm btn-danger">Batal</a>
-                    </div></div>
+                    </div>
+                  </div>
                 </div>
                 
-              </form>
+              
             </div>
+            </form>
       </div>
   </div>
 </div>

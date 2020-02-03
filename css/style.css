@@ -10484,8 +10484,8 @@ code {
   height: 26px; }
 
 .stretch-card {
-  display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
