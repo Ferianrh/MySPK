@@ -30,7 +30,7 @@
             </li>
             <li class="nav-item nav-category"><span class="nav-link">Data</span></li>
             <li class="nav-item">
-              <a class="nav-link" href="#ui-basic" >
+              <a class="nav-link" href="input_penduduk.php" >
                 <span class="menu-title">Input Data Penduduk</span>
                 <i class="icon-layers menu-icon"></i>
               </a>
