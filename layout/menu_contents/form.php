@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 <div class="row">
   <div class="grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
           <h4 class="card-title">Data Penduduk</h4>
           <p class="card-description">Masukkan data penduduk</p>
+=======
+<div class="main-panel">
+  <div class="card">
+    <div class="card-body">
+    <div class="panel-heading">Data Penduduk</div>
+>>>>>>> 5b54748a4abd5c844447f3cea209cd39656ded11
             <div class="panel-body">
               <form class="form-horizontal" action="#" method="post">
                 
@@ -77,6 +84,7 @@
                   <label class="col-sm-4 control-label">Jenis Lantai</label>
                   <div class="col-sm-8">
                     <input type="text" name="nama" class="form-control" placeholder="" value="" >
+<<<<<<< HEAD
                   </div>
                 </div>
 
@@ -94,11 +102,31 @@
                   </div>
                 </div>
 
+=======
+                  </div>
+                </div>
+
+                <div class="form-group">
+                <label class="col-sm-4 control-label">Kemampuan Berobat</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="nama" class="form-control" placeholder="" value="" >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                <label class="col-sm-4 control-label">Pendidikan Terakhir</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="nama" class="form-control" placeholder="" value="" >
+                  </div>
+                </div>
+
+>>>>>>> 5b54748a4abd5c844447f3cea209cd39656ded11
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-8">
                       <button type="submit" name="btn_submit" class="btn btn-sm btn-primary">Simpan</button>
                     
                       <a href="index.php?page=karyawan&sub=list" class="btn btn-sm btn-danger">Batal</a>
+<<<<<<< HEAD
                     </div>
                   </div>
                 </div>
@@ -109,3 +137,12 @@
       </div>
   </div>
 </div>
+=======
+                    </div></div>
+                </div>
+                
+              </form>
+            </div>
+    </div>
+  </div>
+>>>>>>> 5b54748a4abd5c844447f3cea209cd39656ded11
