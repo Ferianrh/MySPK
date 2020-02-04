@@ -51,13 +51,15 @@ $no=1;
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 ?>
             <tr>
-                <td style="vertical-align:middle;"><input type="checkbox" value="<?php echo $row['id_kriteria'] ?>" name="checkbox[]" /></td>
-                <td style="vertical-align:middle;"><?php echo $row['id_kriteria'] ?></td>
-                <td style="vertical-align:middle;"><?php echo $row['nama_kriteria'] ?></td>
-                <td style="vertical-align:middle;"><?php echo $row['bobot_kriteria'] ?></td>
+                <td style="vertical-align:middle;"><input type="checkbox" value="<?php  ?>" name="checkbox[]" /></td>
+                <td style="vertical-align:middle;"><?php  ?></td>
+                <td style="vertical-align:middle;"><?php  ?></td>
+                <td style="vertical-align:middle;"><?php  ?></td>
                 <td style="text-align:center;vertical-align:middle;">
-					<a href="data-kriteria-ubah.php?id=<?php echo $row['id_kriteria'] ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-					<a href="data-kriteria-hapus.php?id=<?php echo $row['id_kriteria'] ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+					<a href="data-kriteria-ubah.php?id=<?php  ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+					<a href="data-kriteria-hapus.php?id=<?php  ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
 			    </td>
             </tr>
 <?php
