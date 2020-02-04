@@ -3,7 +3,8 @@
 include('config.php');
 include('fungsi.php');
 
-
+include('layout/menu_contents/navbar.php');
+	include('layout/menu_contents/sidebar.php');
 
 if (isset($_POST['submit'])) {
 	$jenis = $_POST['jenis'];
@@ -100,7 +101,8 @@ if (isset($_POST['submit'])) {
 	}
 
 }
-
+include('layout/menu_contents/footer.php');
+	include('layout/menu_contents/plugins.php');
 
 
 ?>

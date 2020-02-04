@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     04/02/2020 10:04:41                          */
+/* Created on:     04/02/2020 13:16:44                          */
 /*==============================================================*/
 
 
@@ -11,6 +11,8 @@ drop table if exists DETAIL_KRITERIA;
 drop table if exists IR;
 
 drop table if exists KRITERIA;
+
+drop table if exists KRITERIA_PENDUDUK;
 
 drop table if exists LOGIN;
 
@@ -52,7 +54,7 @@ create table DETAIL_KRITERIA
 (
    ID_KRITERIA          char(7) not null,
    NILAI_KRITERIA       varchar(20) not null,
-   BOBOT_NILAI_KRITERIA int not null
+   BOBOT_NILAI_KRITERIA varchar(100)
 );
 
 /*==============================================================*/
@@ -70,10 +72,19 @@ create table IR
 create table KRITERIA
 (
    ID_KRITERIA          char(7) not null,
-   ID_PENDUDUK          varchar(12),
    NAMA_KRITERIA        varchar(20) not null,
    BOBOT_KRITERIA       decimal(6) not null,
    primary key (ID_KRITERIA)
+);
+
+/*==============================================================*/
+/* Table: KRITERIA_PENDUDUK                                     */
+/*==============================================================*/
+create table KRITERIA_PENDUDUK
+(
+   ID_PENDUDUK          varchar(12) not null,
+   ID_KRITERIA          char(7) not null,
+   primary key (ID_PENDUDUK, ID_KRITERIA)
 );
 
 /*==============================================================*/
@@ -132,8 +143,11 @@ create table PV_PENDUDUK
 alter table DETAIL_KRITERIA add constraint FK_RELATIONSHIP_7 foreign key (ID_KRITERIA)
       references KRITERIA (ID_KRITERIA) on delete restrict on update restrict;
 
-alter table KRITERIA add constraint FK_RELATIONSHIP_2 foreign key (ID_PENDUDUK)
+alter table KRITERIA_PENDUDUK add constraint FK_KRITERIA_PENDUDUK foreign key (ID_PENDUDUK)
       references DATA_KEPALA_KELUARGA (ID_PENDUDUK) on delete restrict on update restrict;
+
+alter table KRITERIA_PENDUDUK add constraint FK_KRITERIA_PENDUDUK2 foreign key (ID_KRITERIA)
+      references KRITERIA (ID_KRITERIA) on delete restrict on update restrict;
 
 alter table PERBANDINGAN_KRITERIA add constraint FK_RELATIONSHIP_5 foreign key (KRITERIA2)
       references KRITERIA (ID_KRITERIA) on delete restrict on update restrict;
