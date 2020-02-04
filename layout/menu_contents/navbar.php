@@ -18,6 +18,8 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" href="./css/semantic.min.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="./images/favicon.png" />
   </head>

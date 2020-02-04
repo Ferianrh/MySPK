@@ -1,4 +1,5 @@
 <!-- plugins:js -->
+<script src="js/jquery-3.2.1.js"></script>
 <script src="vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
@@ -14,5 +15,22 @@
     <!-- Custom js for this page -->
     <script src="./js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+    <script src="css/semantic.min.js"></script>
+<script type="text/javascript">
+	$('.ui.radio.checkbox')
+		.checkbox()
+	;
+</script>
+<script type="text/javascript">
+	$('.message .close')
+	  .on('click', function() {
+	    $(this)
+	      .closest('.message')
+	      .transition('fade')
+	    ;
+	  })
+	;
+</script>
   </body>
 </html>
