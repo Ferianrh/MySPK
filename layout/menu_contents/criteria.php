@@ -1,74 +1,177 @@
-<div class="row">
-	<!--<div class="col-xs-12 col-sm-12 col-md-2">
-    <?php
-    //include_once 'sidebar.php';
-    ?>
-	</div>-->
-	<div class="col-xs-12 col-sm-12 col-md-12">
-    <br>
-        <br>
-        <br>
-	<ol class="breadcrumb">
-        <li><a href="main.php"><span class="fa fa-home"></span> Beranda</a></li>
-        <li class="active"><span class="fa fa-bank"></span> Data Kriteria</li>
-    </ol>
-<form method="post">
-	<div class="row">
-		<div class="col-md-6 text-left">
-			<strong style="font-size:18pt;"><span class="fa fa-bank"></span> Data Kriteria</strong>
-		</div>
-		<div class="col-md-6 text-right">
-            <button type="submit" name="hapus-contengan" class="btn btn-danger"><span class="fa fa-close"></span> Hapus Contengan</button>
-			<button type="button" onclick="location.href='data-kriteria-baru.php'" class="btn btn-primary"><span class="fa fa-clone"></span> Tambah Data</button>
-		</div>
-	</div>
-	<br/>
+<div class="panel panel-primary">    
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-sm-flex align-items-center mb-4">
+                    <h4 class="card-title mb-sm-0">Hasil Sistem Pendukung Keputusan</h4>
+                    </div>
+                    <div class="table-responsive border rounded p-1">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="font-weight-bold">Nama</th>
+                                    <th class="font-weight-bold">Pekerjaan</th>
+                                    <th class="font-weight-bold">Penghasilan</th>
+                                    <th class="font-weight-bold">Sumber Penerangan</th>
+                                    <th class="font-weight-bold">Bahan Bakar Masak</th>
+                                    <th class="font-weight-bold">Membeli Pakaian</th>
+                                    <th class="font-weight-bold">Sumber Air</th>
+                                    <th class="font-weight-bold">Jenis Dinding</th>
+                                    <th class="font-weight-bold">Jenis Lantai</th>
+                                    <th class="font-weight-bold">Kemampuan Berobat</th>
+                                    <th class="font-weight-bold">Pendidikan Terakhir</th>
+                                    <th class="font-weight-bold">Kelayakan BLSM</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td> Penduduk A </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                    <div class="badge badge-success p-2">Layak</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td> Penduduk B </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                    <div class="badge badge-danger p-2">Pending</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td> Penduduk C </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                    <div class="badge badge-warning p-2">Failed</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td> Penduduk D </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                    <div class="badge badge-success p-2">Paid</div>
+                                    </td>
+                                <tr>
+                                    <td> Penduduk E </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                    <div class="badge badge-success p-2">Layak</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td> Penduduk F </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                    <div class="badge badge-danger p-2">Pending</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td> Penduduk G </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                    <div class="badge badge-warning p-2">Failed</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td> Penduduk H </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                    <div class="badge badge-success p-2">Paid</div>
+                                    </td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-	<table width="100%" class="table table-striped table-bordered" id="tabeldata">
-        <thead>
-            <tr>
-                <th width="10px"><input type="checkbox" name="select-all" id="select-all" /></th>
-                <th>ID Kriteria</th>
-                <th>Nama Kriteria</th>
-                <th>Bobot Kriteria</th>
-                <th width="100px">Aksi</th>
-            </tr> 
-        </thead>
-
-        <tfoot>
-            <tr>
-                <th><input type="checkbox" name="select-all2" id="select-all2" /></th>
-                <th>ID Kriteria</th>
-                <th>Nama Kriteria</th>
-                <th>Bobot Kriteria</th>
-                <th>Aksi</th>
-            </tr>
-        </tfoot>
-
-        <tbody>
-<?php
-$no=1;
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-?>
-            <tr>
-                <td style="vertical-align:middle;"><input type="checkbox" value="<?php  ?>" name="checkbox[]" /></td>
-                <td style="vertical-align:middle;"><?php  ?></td>
-                <td style="vertical-align:middle;"><?php  ?></td>
-                <td style="vertical-align:middle;"><?php  ?></td>
-                <td style="text-align:center;vertical-align:middle;">
-					<a href="data-kriteria-ubah.php?id=<?php  ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-					<a href="data-kriteria-hapus.php?id=<?php  ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </a>
-			    </td>
-            </tr>
-<?php
-}
-?>
-        </tbody>
-
-    </table>
-</form>
+                    <div class="d-flex mt-4 flex-wrap">
+                        <p class="text-muted">Showing 1 to 10 of 57 entries</p>
+                        <nav class="ml-auto">
+                            <ul class="pagination separated pagination-info">
+                            <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
+                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                            <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<center><p><h4>Silahkan Masukan Kriteria Yang Di Perlukan, Klik Tombol "Tambah Data" Untuk menambahkan kriteria</h4></p></center>
-</div>			
