@@ -23,7 +23,7 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="./images/favicon.png" />
   </head>
-  <body>
+  <body style="overflow: scroll">
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       

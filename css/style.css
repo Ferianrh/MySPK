@@ -10392,7 +10392,7 @@ html {
   overflow: auto; }
 
 .container-scroller {
-  overflow: hidden; }
+  overflow: scroll; }
 
 pre {
   background: #e8eff4;

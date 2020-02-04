@@ -106,7 +106,7 @@ function getJumlahKriteria() {
 function tambahData($tabel,$nama) {
 	include('config.php');
 
-	$query 	= "INSERT INTO $tabel (nama_kriteria) VALUES ('$nama')";
+	$query 	= "INSERT INTO $tabel (nama) VALUES ('$nama')";
 	$tambah	= mysqli_query($koneksi, $query);
 
 	if (!$tambah) {
