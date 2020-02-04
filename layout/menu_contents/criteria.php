@@ -1,206 +1,108 @@
-<div class="main-panel"> 
-        <div class="content-wrapper">
+<?php
+include("config.php");
+	include('fungsi.php');
 
-        <div class="row quick-action-toolbar">
-            <div class="col-md-12 grid-margin">
-                <div class="card">
-                    <div class="card-header d-block d-md-flex">
-                        <h5 class="mb-0">Quick Actions</h5>
-                        <p class="ml-auto mb-0">Sistem Pendukung Keputusan untuk Kelayakan BLSM<i class="icon-bulb"></i></p>
-                    </div>
-                    <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
-                        <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                            <button type="button" class="btn px-0"> <i class="icon-user mr-2"></i> Edit Data Kriteria</button>
-                        </div>
-                        <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                            <button type="button" class="btn px-0"><i class="icon-docs mr-2"></i> -</button>
-                        </div>
-                        <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                            <button type="button" class="btn px-0"><i class="icon-folder mr-2"></i> -</button>
-                        </div>
-                        <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                            <button type="button" class="btn px-0"><i class="icon-book-open mr-2"></i> -</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-primary">    
-        <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-sm-flex align-items-center mb-4">
-                            <h4 class="card-title mb-sm-0">Hasil Sistem Pendukung Keputusan</h4>
-                        </div>
+	// menjalankan perintah edit
+	if(isset($_POST['edit'])) {
+		$id = $_POST['id'];
 
-                        <div class="table-responsive border rounded p-1">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th class="font-weight-bold">Kriteria</th>
-                                        <th class="font-weight-bold">Pekerjaan</th>
-                                        <th class="font-weight-bold">Penghasilan</th>
-                                        <th class="font-weight-bold">Sumber Penerangan</th>
-                                        <th class="font-weight-bold">Bahan Bakar Masak</th>
-                                        <th class="font-weight-bold">Membeli Pakaian</th>
-                                        <th class="font-weight-bold">Sumber Air</th>
-                                        <th class="font-weight-bold">Jenis Dinding</th>
-                                        <th class="font-weight-bold">Jenis Lantai</th>
-                                        <th class="font-weight-bold">Kemampuan Berobat</th>
-                                        <th class="font-weight-bold">Pendidikan Terakhir</th>
-                                        <th class="font-weight-bold">Kelayakan BLSM</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td> Kriteria A </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                        <div class="badge badge-success p-2">Layak</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                    <td> Kriteria B </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                        <div class="badge badge-danger p-2">Pending</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                    <td> Kriteria C </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                        <div class="badge badge-warning p-2">Failed</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                    <td> Kriteria D </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                        <div class="badge badge-success p-2">Paid</div>
-                                        </td>
-                                    <tr>
-                                        <td> Kriteria E </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                            <div class="badge badge-success p-2">Layak</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> Kriteria F </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                            <div class="badge badge-danger p-2">Pending</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                    <td> Kriteria G </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                            <div class="badge badge-warning p-2">Failed</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> Kriteria H </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>
-                                            <div class="badge badge-success p-2">Paid</div>
-                                        </td>
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+		header('Location: edit.php?jenis=kriteria&id='.$id);
+		exit();
+	}
 
-                        <div class="d-flex mt-4 flex-wrap">
-                            <p class="text-muted">Showing 1 to 10 of 57 entries</p>
-                            <nav class="ml-auto">
-                                <ul class="pagination separated pagination-info">
-                                <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
-                                <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                <li class="page-item"><a href="#" class="page-link">3</a></li>
-                                <li class="page-item"><a href="#" class="page-link">4</a></li>
-                                <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	// menjalankan perintah delete
+	if(isset($_POST['delete'])) {
+		$id = $_POST['id'];
+		deleteKriteria($id);
+	}
+
+	// menjalankan perintah tambah
+	if(isset($_POST['tambah'])) {
+		$nama = $_POST['nama'];
+		tambahData('kriteria',$nama);
+	}
+?>
+
+<div class="main-panel">
+
+<div class="card">
+    <div class="card-body">
+    <div class="row">
+	<!--<div class="col-xs-12 col-sm-12 col-md-2">
+    <?php
+    //include_once 'sidebar.php';
+    ?>
+	</div>-->
+	<div class="col-xs-12 col-sm-12 col-md-12">
+   
+<form method="post">
+	<div class="row">
+		<div class="col-md-6 text-left">
+			<strong style="font-size:18pt;"><span class="fa fa-bank"></span> Data Kriteria</strong>
+		</div>
+		<div class="col-md-6 text-right">
+            <button type="submit" name="hapus-contengan" class="btn btn-danger"><span class="fa fa-close"></span> Hapus Contengan</button>
+			<button type="button" onclick="location.href='data-kriteria-baru.php'" class="btn btn-primary"><span class="fa fa-clone"></span> Tambah Data</button>
+		</div>
+	</div>
+	<br/>
+
+	<table width="100%" class="table table-striped table-bordered" id_kriteria="tabeldata">
+        <thead>
+            <tr>
+                
+                <th>No</th>
+                <th>Nama Kriteria</th>
+                <th width="100px">Aksi</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+		<?php
+			// Menampilkan list kriteria
+			$query = "SELECT id_kriteria,nama_kriteria FROM kriteria ORDER BY id_kriteria";
+			$result	= mysqli_query($koneksi, $query);
+
+			$i = 0;
+			while ($row = mysqli_fetch_array($result)) {
+				$i++;
+		?>
+			<tr>
+				<td><?php echo $i ?></td>
+				<td><?php echo $row['nama_kriteria'] ?></td>
+				<td class="right aligned collapsing">
+					<form method="post" action="criteria.php">
+						<input type="hidden" name="id_kriteria" value="<?php echo $row['id_kriteria'] ?>">
+						<button type="submit" name="edit" class="ui mini teal left labeled icon button"><i class="right edit icon"></i>EDIT</button>
+						<button type="submit" name="delete" class="ui mini red left labeled icon button"><i class="right remove icon"></i>DELETE</button>
+					</form>
+				</td>
+			</tr>
+		
+
+	<?php } ?>
+
+
+		</tbody>
+		<tfoot class="full-width">
+			<tr>
+				<th colspan="3">
+					<a href="tambah.php?jenis=kriteria">
+						<div class="ui right floated small primary labeled icon button">
+						<i class="plus icon"></i>Tambah
+						</div>
+					</a>
+				</th>
+			</tr>
+		</tfoot>
+
+    </table>
+</form>
+</div>
+<center><p><h4>Silahkan Masukan Kriteria Yang Di Perlukan, Klik Tombol "Tambah Data" Untuk menambahkan kriteria</h4></p></center>
+</div>			
+
+
     </div>
 </div>

@@ -1,21 +1,21 @@
 <?php
-
+session_start();
 if (isset($_SESSION['status'])){
-      header('Location: login.php');
-      exit;
+  include_once("layout/View.php");
+    
+  $v = new View();
+
+  if(isset($_GET["page"])) {
+    $PAGE = $_GET["page"];
+  }
+  else {
+    $PAGE = "home";
+  }
+  $v->render_all();
     
     }else{
-      include_once("layout/View.php");
-    
-      $v = new View();
-    
-      if(isset($_GET["page"])) {
-        $PAGE = $_GET["page"];
-      }
-      else {
-        $PAGE = "home";
-      }
-      $v->render_all();
+      header('Location: login.php');
+      exit;
     }
     
 ?>  

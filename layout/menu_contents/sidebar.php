@@ -39,23 +39,17 @@
                 <i class="icon-layers menu-icon"></i>
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="view_criteria.php" >
-                <span class="menu-title">Data Kriteria</span>
+                <span class="menu-title">Input Data Kriteria</span>
+                <i class="icon-layers menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bobot_kriteria.php">
+                <span class="menu-title">Perbandingan Kriteria</span>
                 <i class="icon-book-open menu-icon"></i>
               </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> 
-                      <a class="nav-link" href="layout/menu_contents/form.php">Buttons</a>
-                    </li>
-                    <li class="nav-item"> 
-                      <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
-                    </li>
-                </ul>
-              </div>
-
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/icons/simple-line-icons.html">
