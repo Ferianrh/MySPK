@@ -12,7 +12,7 @@ include("config.php");
 
 	// menjalankan perintah delete
 	if(isset($_POST['delete'])) {
-		$id = $_POST['id'];
+		$id = $_POST['id_kriteria'];
 		deleteKriteria($id);
 	}
 
@@ -72,7 +72,7 @@ include("config.php");
 				<td><?php echo $i ?></td>
 				<td><?php echo $row['nama_kriteria'] ?></td>
 				<td class="right aligned collapsing">
-					<form method="post" action="criteria.php">
+					<form method="post" action="view_criteria.php">
 						<input type="hidden" name="id_kriteria" value="<?php echo $row['id_kriteria'] ?>">
 						<button type="submit" name="edit" class="ui mini teal left labeled icon button"><i class="right edit icon"></i>EDIT</button>
 						<button type="submit" name="delete" class="ui mini red left labeled icon button"><i class="right remove icon"></i>DELETE</button>

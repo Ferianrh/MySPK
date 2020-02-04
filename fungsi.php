@@ -106,7 +106,7 @@ function getJumlahKriteria() {
 function tambahData($tabel,$nama) {
 	include('config.php');
 
-	$query 	= "INSERT INTO $tabel (nama) VALUES ('$nama')";
+	$query 	= "INSERT INTO $tabel (nama_kriteria) VALUES ('$nama')";
 	$tambah	= mysqli_query($koneksi, $query);
 
 	if (!$tambah) {
@@ -396,7 +396,8 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	?>
 
 	<form class="ui form" action="proses.php" method="post">
-	<table class="ui celled selectable collapsing table">
+	<table class="table table-bordered
+">
 		<thead>
 			<tr>
 				<th colspan="2">pilih yang lebih penting</th>

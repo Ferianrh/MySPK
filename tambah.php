@@ -13,7 +13,7 @@
 
 		tambahData($jenis,$nama);
 
-		header('Location: '.$jenis.'.php');
+		header('Location: '.'view_criteria'.'.php');
 	}
 
 	include('layout/menu_contents/navbar.php');
