@@ -32,7 +32,7 @@
                 <th>Nama Kriteria</th>
                 <th>Bobot Kriteria</th>
                 <th width="100px">Aksi</th>
-            </tr>
+            </tr> 
         </thead>
 
         <tfoot>
