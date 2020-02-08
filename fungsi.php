@@ -55,9 +55,9 @@ function getAlternatifNama($no_urut) {
 }
 
 // mencari priority vector alternatif
-function getAlternatifPV($id_alternatif,$id_kriteria) {
+function getAlternatifPV($id_alternatif,$id) {
 	include('config.php');
-	$query = "SELECT nilai FROM pv_alternatif WHERE id_alternatif=$id_alternatif AND id_kriteria=$id_kriteria";
+	$query = "SELECT nilai FROM pv_alternatif WHERE id_alternatif=$id_alternatif AND id=$id";
 	$result = mysqli_query($koneksi, $query);
 	while ($row = mysqli_fetch_array($result)) {
 		$pv = $row['nilai'];
@@ -67,9 +67,9 @@ function getAlternatifPV($id_alternatif,$id_kriteria) {
 }
 
 // mencari priority vector kriteria
-function getKriteriaPV($id_kriteria) {
+function getKriteriaPV($id) {
 	include('config.php');
-	$query = "SELECT nilai FROM pv_kriteria WHERE id_kriteria=$id_kriteria";
+	$query = "SELECT nilai FROM pv_kriteria WHERE id=$id";
 	$result = mysqli_query($koneksi, $query);
 	while ($row = mysqli_fetch_array($result)) {
 		$pv = $row['nilai'];
@@ -106,7 +106,7 @@ function getJumlahKriteria() {
 function tambahData($tabel,$nama) {
 	include('config.php');
 
-	$query 	= "INSERT INTO $tabel (nama) VALUES ('$nama')";
+	$query 	= "INSERT INTO $tabel (nama_kriteria) VALUES ('$nama')";
 	$tambah	= mysqli_query($koneksi, $query);
 
 	if (!$tambah) {
@@ -115,12 +115,26 @@ function tambahData($tabel,$nama) {
 	}
 }
 
+function tambahPenduduk($nama, $alamat, $jml, $status, $pekerjaan, $pendidikan, $penghasilan,$penerangan,$masak, $pakaian, $air, $dinding, $lantai, $berobat){
+include('config.php');
+
+$query = "INSERT INTO data_kepala_keluarga (nama,alamat,jumlah_anggota_keluarga, status_kpl_keluarga,pekerjaan,pendidikan_terakhir,penghasilan,sumber_penerangan,bahan_bakar_masak,membeli_pakaian,sumber_air,jenis_dinding,jenis_lantai,kemampuan_berobat)
+								 VALUES('$nama','$alamat',$jml,'$status','$pekerjaan','$pendidikan',$penghasilan,'$penerangan','$masak','$pakaian','$air','$dinding','$lantai','$berobat')";
+$input = mysqli_query($koneksi,$query);
+if(!$input){
+	echo "Error: ". mysqli_error($koneksi);
+	exit();
+}
+
+
+}
+
 // hapus kriteria
 function deleteKriteria($id) {
 	include('config.php');
 
 	// hapus record dari tabel kriteria
-	$query 	= "DELETE FROM kriteria WHERE id=$id";
+	$query 	= "DELETE FROM kriteria WHERE id_kriteria=$id";
 	mysqli_query($koneksi, $query);
 
 	// hapus record dari tabel pv_kriteria
@@ -159,10 +173,10 @@ function deleteAlternatif($id) {
 }
 
 // memasukkan nilai priority vektor kriteria
-function inputKriteriaPV ($id_kriteria,$pv) {
+function inputKriteriaPV ($id,$pv) {
 	include ('config.php');
 
-	$query = "SELECT * FROM pv_kriteria WHERE id_kriteria=$id_kriteria";
+	$query = "SELECT * FROM pv_kriteria WHERE id=$id";
 	$result = mysqli_query($koneksi, $query);
 
 	if (!$result) {
@@ -173,9 +187,9 @@ function inputKriteriaPV ($id_kriteria,$pv) {
 	// jika result kosong maka masukkan data baru
 	// jika telah ada maka diupdate
 	if (mysqli_num_rows($result)==0) {
-		$query = "INSERT INTO pv_kriteria (id_kriteria, nilai) VALUES ($id_kriteria, $pv)";
+		$query = "INSERT INTO pv_kriteria (id, nilai) VALUES ($id, $pv)";
 	} else {
-		$query = "UPDATE pv_kriteria SET nilai=$pv WHERE id_kriteria=$id_kriteria";
+		$query = "UPDATE pv_kriteria SET nilai=$pv WHERE id=$id";
 	}
 
 
@@ -188,10 +202,10 @@ function inputKriteriaPV ($id_kriteria,$pv) {
 }
 
 // memasukkan nilai priority vektor alternatif
-function inputAlternatifPV ($id_alternatif,$id_kriteria,$pv) {
+function inputAlternatifPV ($id_alternatif,$id,$pv) {
 	include ('config.php');
 
-	$query  = "SELECT * FROM pv_alternatif WHERE id_alternatif = $id_alternatif AND id_kriteria = $id_kriteria";
+	$query  = "SELECT * FROM pv_alternatif WHERE id_alternatif = $id_alternatif AND id = $id";
 	$result = mysqli_query($koneksi, $query);
 
 	if (!$result) {
@@ -202,9 +216,9 @@ function inputAlternatifPV ($id_alternatif,$id_kriteria,$pv) {
 	// jika result kosong maka masukkan data baru
 	// jika telah ada maka diupdate
 	if (mysqli_num_rows($result)==0) {
-		$query = "INSERT INTO pv_alternatif (id_alternatif,id_kriteria,nilai) VALUES ($id_alternatif,$id_kriteria,$pv)";
+		$query = "INSERT INTO pv_alternatif (id_alternatif,id,nilai) VALUES ($id_alternatif,$id,$pv)";
 	} else {
-		$query = "UPDATE pv_alternatif SET nilai=$pv WHERE id_alternatif=$id_alternatif AND id_kriteria=$id_kriteria";
+		$query = "UPDATE pv_alternatif SET nilai=$pv WHERE id_alternatif=$id_alternatif AND id=$id";
 	}
 
 	$result = mysqli_query($koneksi, $query);
@@ -220,10 +234,10 @@ function inputAlternatifPV ($id_alternatif,$id_kriteria,$pv) {
 function inputDataPerbandinganKriteria($kriteria1,$kriteria2,$nilai) {
 	include('config.php');
 
-	$id_kriteria1 = getKriteriaID($kriteria1);
-	$id_kriteria2 = getKriteriaID($kriteria2);
+	$id1 = getKriteriaID($kriteria1);
+	$id2 = getKriteriaID($kriteria2);
 
-	$query  = "SELECT * FROM perbandingan_kriteria WHERE kriteria1 = $id_kriteria1 AND kriteria2 = $id_kriteria2";
+	$query  = "SELECT * FROM perbandingan_kriteria WHERE kriteria1 = $id1 AND kriteria2 = $id2";
 	$result = mysqli_query($koneksi, $query);
 
 	if (!$result) {
@@ -234,9 +248,9 @@ function inputDataPerbandinganKriteria($kriteria1,$kriteria2,$nilai) {
 	// jika result kosong maka masukkan data baru
 	// jika telah ada maka diupdate
 	if (mysqli_num_rows($result)==0) {
-		$query = "INSERT INTO perbandingan_kriteria (kriteria1,kriteria2,nilai) VALUES ($id_kriteria1,$id_kriteria2,$nilai)";
+		$query = "INSERT INTO perbandingan_kriteria (kriteria1,kriteria2,nilai) VALUES ($id1,$id2,$nilai)";
 	} else {
-		$query = "UPDATE perbandingan_kriteria SET nilai=$nilai WHERE kriteria1=$id_kriteria1 AND kriteria2=$id_kriteria2";
+		$query = "UPDATE perbandingan_kriteria SET nilai=$nilai WHERE kriteria1=$id1 AND kriteria2=$id2";
 	}
 
 	$result = mysqli_query($koneksi, $query);
@@ -284,10 +298,10 @@ function inputDataPerbandinganAlternatif($alternatif1,$alternatif2,$pembanding,$
 function getNilaiPerbandinganKriteria($kriteria1,$kriteria2) {
 	include('config.php');
 
-	$id_kriteria1 = getKriteriaID($kriteria1);
-	$id_kriteria2 = getKriteriaID($kriteria2);
+	$id1 = getKriteriaID($kriteria1);
+	$id2 = getKriteriaID($kriteria2);
 
-	$query  = "SELECT nilai FROM perbandingan_kriteria WHERE kriteria1 = $id_kriteria1 AND kriteria2 = $id_kriteria2";
+	$query  = "SELECT nilai FROM perbandingan_kriteria WHERE kriteria1 = $id1 AND kriteria2 = $id2";
 	$result = mysqli_query($koneksi, $query);
 
 	if (!$result) {
