@@ -52,6 +52,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="bobot_subkriteria.php">
+                <span class="menu-title">Pembobotan Sub Kriteria</span>
+                <i class="icon-book-open menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="bobot.php?c=1">
                 <span class="menu-title">Perbandingan Penduduk</span>
                 <i class="icon-book-open menu-icon"></i>

@@ -31,14 +31,27 @@ function getAlternatifID($no_urut) {
 // mencari nama kriteria
 function getKriteriaNama($no_urut) {
 	include('config.php');
-	$query  = "SELECT nama FROM kriteria ORDER BY id";
+	$query  = "SELECT nama_kriteria FROM kriteria ORDER BY id_kriteria";
 	$result = mysqli_query($koneksi, $query);
 
 	while ($row = mysqli_fetch_array($result)) {
-		$nama[] = $row['nama'];
+		$nama[] = $row['nama_kriteria'];
 	}
 
 	return $nama[$no_urut];
+}
+
+//get nama kriteria
+function getNamaKriteria() {
+	include('config.php');
+	$query  = "SELECT nama_kriteria FROM kriteria ORDER BY id_kriteria";
+	$result = mysqli_query($koneksi, $query);
+
+	while ($row = mysqli_fetch_array($result)) {
+		$nama[] = $row['nama_kriteria'];
+	}
+
+	return $nama;
 }
 
 // mencari nama alternatif
@@ -472,8 +485,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	?>
 
 	<form class="ui form" action="proses.php" method="post">
-	<table class="table table-bordered
-">
+	<table class="table table-bordered">
 		<thead>
 			<tr>
 				<th colspan="2">pilih yang lebih penting</th>
@@ -539,4 +551,102 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	<?php
 }
 
+function inputNilaiSubKriteria($kriteria) {
+
+	include('config.php');
+
+	// mendapatkan data edit
+	
+
+	$query  = "SELECT nama_kriteria FROM kriteria ORDER BY id_kriteria";
+	$result = mysqli_query($koneksi, $query);
+
+	if ($kriteria == 'kriteria') {
+		$n = getJumlahKriteria();
+	}
+
+	while ($row = mysqli_fetch_array($result)) {
+		$nama[] = $row['nama_kriteria'];
+	}
+
+		//header('Location: '.$jenis.'.php');
+	
+
+	// include('layout/menu_contents/navbar.php');
+	// include('layout/menu_contents/sidebar.php');
+?>
+
+
+<div class="main-panel">
+	<div class="card">
+		<div class="card-body">
+			<section class="content">
+				<h2>Tambah <?php //echo $jenis?></h2>
+				<form class="ui form" method="post" action="bobot_subkriteria.php">
+					<div class="form-group">
+						<label>Pilih Kriteria</label>
+						<select class="form-control" id="kriteria" name="kriteria">
+							<?php
+								for($i=0;$i<count($nama);$i++){
+									echo  '<option>'.$nama[$i].'</option>';
+								}
+							?>
+						</select>
+					</div>
+					<div class="form-group">
+						
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Sub-Kriteria</th>
+									<th>Nilai Bobot</th>
+								</tr>
+							</thead>
+						<tbody>
+
+						<?php
+						//inisialisasi
+						$urut = 0;
+						for ($x=0; $x <= ($n - 1); $x++) {
+							// for ($y=($x+1); $y <= ($n - 1) ; $y++) {
+							$urut++;
+						?>
+
+							<tr>
+								<td>
+									<div class="field">
+										<label><?php $urut ?></label>
+										<label><?php $nama[$x] ?></label>
+									</div>
+								</td>
+							
+								<td>
+									<div class="field">
+									
+										<input type="text" name="bobot<?php echo $urut?>" value="<?php echo $nilai?>" required>
+									</div>
+								</td>
+							</tr>
+							<?php
+								}
+							
+							?>
+							
+						</tbody>
+						</table>
+
+					</div>
+					
+					<br>
+					<input class="ui green button" type="submit" name="tambah" value="SIMPAN">
+				</form>
+			</section>
+		</div>
+	</div>
+</div>
+
+
+<?php
+
+}
 ?>
