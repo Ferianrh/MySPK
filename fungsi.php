@@ -81,7 +81,7 @@ function getKriteriaPV($id) {
 // mencari jumlah alternatif
 function getJumlahAlternatif() {
 	include('config.php');
-	$query  = "SELECT count(*) FROM alternatif";
+	$query  = "SELECT count(*) FROM data_kepala_keluarga";
 	$result = mysqli_query($koneksi, $query);
 	while ($row = mysqli_fetch_array($result)) {
 		$jmlData = $row[0];
@@ -310,7 +310,7 @@ function inputDataPerbandinganKriteria($kriteria1,$kriteria2,$nilai) {
 	// jika result kosong maka masukkan data baru
 	// jika telah ada maka diupdate
 	if (mysqli_num_rows($result)==0) {
-		$query = "INSERT INTO perbandingan_kriteria (kriteria1,kriteria2,nilai) VALUES ($id1,$id2,$nilai)";
+		$query = "INSERT INTO perbandingan_kriteria (kriteria1,kriteria2,nilai_analisa_kriteria) VALUES ($id1,$id2,$nilai)";
 	} else {
 		$query = "UPDATE perbandingan_kriteria SET nilai=$nilai WHERE kriteria1=$id1 AND kriteria2=$id2";
 	}
@@ -390,7 +390,7 @@ function getNilaiPerbandinganAlternatif($alternatif1,$alternatif2,$pembanding) {
 	$id_alternatif2 = getAlternatifID($alternatif2);
 	$id_pembanding  = getKriteriaID($pembanding);
 
-	$query  = "SELECT nilai FROM perbandingan_alternatif WHERE alternatif1 = $id_alternatif1 AND alternatif2 = $id_alternatif2 AND pembanding = $id_pembanding";
+	$query  = "SELECT nilai_kriteria FROM perbandingan_alternatif WHERE alternatif1 = $id_alternatif1 AND alternatif2 = $id_alternatif2 AND pembanding = $id_pembanding";
 	$result = mysqli_query($koneksi, $query);
 
 	if (!$result) {
@@ -401,7 +401,7 @@ function getNilaiPerbandinganAlternatif($alternatif1,$alternatif2,$pembanding) {
 		$nilai = 1;
 	} else {
 		while ($row = mysqli_fetch_array($result)) {
-			$nilai = $row['nilai'];
+			$nilai = $row['nilai_kriteria'];
 		}
 	}
 
