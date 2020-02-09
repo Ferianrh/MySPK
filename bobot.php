@@ -10,7 +10,7 @@
 <div class="main-panel">
 <section class="content">
 	<h2 class="ui header">Perbandingan Alternatif &rarr; <?php echo getKriteriaNama($jenis-1) ?></h2>
-	<?php showTabelPerbandingan($jenis,'alternatif'); ?>
+	<?php showTabelPerbandingan($jenis,'data_kepala_keluarga'); ?>
 </section>
 
 <?php include('layout/menu_contents/footer.php');
