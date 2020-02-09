@@ -3,12 +3,12 @@ include("config.php");
 	include('fungsi.php');
 
 	// menjalankan perintah edit
-	if(isset($_POST['edit'])) {
-		$id = $_POST['id'];
+	// if(isset($_POST['edit'])) {
+	// 	$id = $_POST['id'];
 
-		header('Location: edit.php?jenis=kriteria&id='.$id);
-		exit();
-	}
+	// 	header('Location: edit.php?jenis=kriteria&id='.$id);
+	// 	exit();
+	// }
 
 	// menjalankan perintah delete
 	if(isset($_POST['delete'])) {
@@ -39,7 +39,7 @@ include("config.php");
 
 		<?php
 			// Menampilkan list kriteria
-			$query = "SELECT id,nama FROM kriteria ORDER BY id";
+			$query = "SELECT id_kriteria,nama_kriteria FROM kriteria ORDER BY id_kriteria";
 			$result	= mysqli_query($koneksi, $query);
 
 			$i = 0;
@@ -48,11 +48,11 @@ include("config.php");
 		?>
 			<tr>
 				<td><?php echo $i ?></td>
-				<td><?php echo $row['nama'] ?></td>
+				<td><?php echo $row['nama_kriteria'] ?></td>
 				<td class="right aligned collapsing">
 					<form method="post" action="view_criteria.php">
-						<input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-						<button type="submit" name="edit" class="ui mini teal left labeled icon button"><i class="right edit icon"></i>EDIT</button>
+						<input type="hidden" name="id" value="<?php echo $row['id_kriteria'] ?>">
+						<a href="edit.php?jenis=kriteria&id=<?php echo $row['id_kriteria']?>"><button type="button" class="ui mini teal left labeled icon button"><i class="right edit icon"></i>EDIT</button></a>
 						<button type="submit" name="delete" class="ui mini red left labeled icon button"><i class="right remove icon"></i>DELETE</button>
 					</form>
 				</td>
@@ -80,7 +80,7 @@ include("config.php");
 
 
 
-	<form action="alternatif.php">
+	<form action="input_penduduk.php">
 	<button class="ui right labeled icon button" style="float: right;">
 		<i class="right arrow icon"></i>
 		Lanjut

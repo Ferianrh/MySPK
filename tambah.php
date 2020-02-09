@@ -27,8 +27,20 @@
 
 	<form class="ui form" method="post" action="tambah.php">
 		<div class="inline field">
-			<label>Nama <?php echo $jenis ?></label>
-			<input type="text" name="nama" placeholder="<?php echo $jenis?> baru">
+			<label>Kriteria <?php echo $jenis ?></label>
+				<select name="nama">
+					<?php
+					$query = "show columns from data_kepala_keluarga";
+					$input = mysqli_query($koneksi, $query);
+					while($row = mysqli_fetch_array($input)){
+						if($row[0]!="ID_PENDUDUK" && $row[0]!="NAMA" && $row[0] !="ALAMAT" ){
+							$val = str_replace("_"," ", $row[0]);
+							echo '<option value="'.$val.'">'.$val.'</option>';
+						}
+						
+					}
+					?>
+				</select>
 			<input type="hidden" name="jenis" value="<?php echo $jenis?>">
 		</div>
 		<br>
