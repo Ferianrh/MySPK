@@ -249,9 +249,9 @@ function inputKriteriaPV ($id,$pv) {
 	// jika result kosong maka masukkan data baru
 	// jika telah ada maka diupdate
 	if (mysqli_num_rows($result)==0) {
-		$query = "INSERT INTO pv_kriteria (id, nilai) VALUES ($id, $pv)";
+		$query = "INSERT INTO pv_kriteria (id_kriteria, nilai) VALUES ($id, $pv)";
 	} else {
-		$query = "UPDATE pv_kriteria SET nilai=$pv WHERE id=$id";
+		$query = "UPDATE pv_kriteria SET nilai=$pv WHERE id_kriteria=$id";
 	}
 
 
