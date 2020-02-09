@@ -4,11 +4,11 @@
 // berdasarkan urutan ke berapa (C1, C2, C3)
 function getKriteriaID($no_urut) {
 	include('config.php');
-	$query  = "SELECT id FROM kriteria ORDER BY id";
+	$query  = "SELECT id_kriteria FROM kriteria ORDER BY id_kriteria";
 	$result = mysqli_query($koneksi, $query);
 
 	while ($row = mysqli_fetch_array($result)) {
-		$listID[] = $row['id'];
+		$listID[] = $row['id_kriteria'];
 	}
 
 	return $listID[($no_urut)];
@@ -363,7 +363,7 @@ function getNilaiPerbandinganKriteria($kriteria1,$kriteria2) {
 	$id1 = getKriteriaID($kriteria1);
 	$id2 = getKriteriaID($kriteria2);
 
-	$query  = "SELECT nilai FROM perbandingan_kriteria WHERE kriteria1 = $id1 AND kriteria2 = $id2";
+	$query  = "SELECT nilai_analisa_kriteria FROM perbandingan_kriteria WHERE kriteria1 = $id1 AND kriteria2 = $id2";
 	$result = mysqli_query($koneksi, $query);
 
 	if (!$result) {
@@ -456,7 +456,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 		$n = getJumlahAlternatif();
 	}
 
-	$query = "SELECT nama FROM $kriteria ORDER BY id";
+	$query = "SELECT nama_kriteria FROM $kriteria ORDER BY id_kriteria";
 	$result	= mysqli_query($koneksi, $query);
 	if (!$result) {
 		echo "Error koneksi database!!!";
@@ -465,7 +465,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 
 	// buat list nama pilihan
 	while ($row = mysqli_fetch_array($result)) {
-		$pilihan[] = $row['nama'];
+		$pilihan[] = $row['nama_kriteria'];
 	}
 
 	// tampilkan tabel
