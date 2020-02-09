@@ -52,21 +52,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/icons/simple-line-icons.html">
-                <span class="menu-title">Icons</span>
-                <i class="icon-globe menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/forms/basic_elements.html">
-                <span class="menu-title">Form Elements</span>
+              <a class="nav-link" href="bobot.php?c=1">
+                <span class="menu-title">Perbandingan Penduduk</span>
                 <i class="icon-book-open menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/charts/chartist.html">
-                <span class="menu-title">Charts</span>
-                <i class="icon-chart menu-icon"></i>
+              <a class="nav-link" href="hasil.php">
+                <span class="menu-title">Hasil</span>
+                <i class="icon-book-open menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
