@@ -5,7 +5,7 @@
     <div class="card-body">
     <div class="panel-heading">Data Penduduk</div>
             <div class="panel-body">
-              <form class="form-horizontal" action="input_penduduk.php" method="post">
+              <form class="form-horizontal ui form" action="input_penduduk.php" method="post">
                 
                 <input type="hidden" name="id_hidden" value="" />
                 <div class="row">

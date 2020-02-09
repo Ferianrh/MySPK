@@ -129,6 +129,84 @@ if(!$input){
 
 }
 
+function viewPenduduk(){
+	include('config.php');
+
+	$query = "SELECT NAMA,ALAMAT,JUMLAH_ANGGOTA_KELUARGA,STATUS_KPL_KELUARGA,PEKERJAAN,PENDIDIKAN_TERAKHIR,PENGHASILAN,SUMBER_PENERANGAN,BAHAN_BAKAR_MASAK, MEMBELI_PAKAIAN, SUMBER_AIR,JENIS_DINDING,JENIS_LANTAI,KEMAMPUAN_BEROBAT 
+	FROM DATA_KEPALA_KELUARGA";
+	$data = mysqli_query($koneksi,$query);
+?>
+	<div class="card">
+    <div class="card-body">
+    <div class="d-sm-flex align-items-center mb-4">
+      <h4 class="card-title mb-sm-0">Daftar Penduduk</h4>
+    </div>
+    <div class="table-responsive border rounded p-1">
+      <table class="table">
+        <thead>
+          <tr>
+			<th class="font-weight-bold">Nama</th>
+			<th class="font-weight-bold">Alamat</th>
+			<th class="font-weight-bold">Jumlah Anggota Keluarga</th>
+			<th class="font-weight-bold">Status Kepala Keluarga</th>
+			<th class="font-weight-bold">Pekerjaan</th>
+			<th class="font-weight-bold">Pendidikan Terakhir</th>
+            <th class="font-weight-bold">Penghasilan</th>
+            <th class="font-weight-bold">Sumber Penerangan</th>
+            <th class="font-weight-bold">Bahan Bakar Masak</th>
+            <th class="font-weight-bold">Membeli Pakaian</th>
+            <th class="font-weight-bold">Sumber Air</th>
+            <th class="font-weight-bold">Jenis Dinding</th>
+            <th class="font-weight-bold">Jenis Lantai</th>
+            <th class="font-weight-bold">Kemampuan Berobat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+			<?php
+			while($row = mysqli_fetch_array($data)){
+				echo '<td>'.$row[0].'</td>';
+				echo '<td>'.$row[1].'</td>';
+				echo '<td>'.$row[2].'</td>';
+				echo '<td>'.$row[3].'</td>';
+				echo '<td>'.$row[4].'</td>';
+				echo '<td>'.$row[5].'</td>';
+				echo '<td>'.$row[6].'</td>';
+				echo '<td>'.$row[7].'</td>';
+				echo '<td>'.$row[8].'</td>';
+				echo '<td>'.$row[9].'</td>';
+				echo '<td>'.$row[10].'</td>';
+				echo '<td>'.$row[11].'</td>';
+				echo '<td>'.$row[12].'</td>';
+				echo '<td>'.$row[13].'</td>';
+			}
+				
+				
+
+			?>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="d-flex mt-4 flex-wrap">
+      <p class="text-muted">Showing 1 to 10 of 57 entries</p>
+      <nav class="ml-auto">
+        <ul class="pagination separated pagination-info">
+          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
+          <li class="page-item active"><a href="#" class="page-link">1</a></li>
+          <li class="page-item"><a href="#" class="page-link">2</a></li>
+          <li class="page-item"><a href="#" class="page-link">3</a></li>
+          <li class="page-item"><a href="#" class="page-link">4</a></li>
+          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+      </div>
+  </div>
+<?php
+}
+
 // hapus kriteria
 function deleteKriteria($id) {
 	include('config.php');

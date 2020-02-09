@@ -80,7 +80,7 @@ include("config.php");
 
 
 
-	<form action="alternatif.php">
+	<form action="input_penduduk.php">
 	<button class="ui right labeled icon button" style="float: right;">
 		<i class="right arrow icon"></i>
 		Lanjut

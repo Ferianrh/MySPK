@@ -23,18 +23,15 @@ $pendidikan = $_POST['pendidikan'];
 tambahPenduduk($nama, $alamat, $jmlAnggota, $stsKepala, $pekerjaan, $pendidikan, $penghasilan,$penerangan,$masak, $pakaian, $air, $dinding, $lantai, $berobat);
 }
 
-    include_once('layout/view.php');
+include('layout/menu_contents/navbar.php');
+include('layout/menu_contents/sidebar.php');
+include('layout/menu_contents/form.php');
 
-    $v = new View();
+viewPenduduk();
 
-    $v->set_content('menu_contents/form.php');
-    if(isset($_GET["page"])) {
-        $PAGE = $_GET["page"];
-      }
-      else {
-        $PAGE = "home";
-      }
-      $v->render_all();
+include('layout/menu_contents/footer.php');
+	include('layout/menu_contents/plugins.php'); 
 
-      
 ?>
+
+
