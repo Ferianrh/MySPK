@@ -4,7 +4,6 @@ include('config.php');
 include('fungsi.php');
 
 
-
 if (isset($_POST['submit'])) {
 	$jenis = $_POST['jenis'];
 
