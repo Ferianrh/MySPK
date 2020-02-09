@@ -119,7 +119,7 @@ function tambahPenduduk($nama, $alamat, $jml, $status, $pekerjaan, $pendidikan, 
 include('config.php');
 
 $query = "INSERT INTO data_kepala_keluarga (nama,alamat,jumlah_anggota_keluarga, status_kpl_keluarga,pekerjaan,pendidikan_terakhir,penghasilan,sumber_penerangan,bahan_bakar_masak,membeli_pakaian,sumber_air,jenis_dinding,jenis_lantai,kemampuan_berobat)
-								 VALUES('$nama','$alamat',$jml,'$status','$pekerjaan','$pendidikan',$penghasilan,'$penerangan','$masak','$pakaian','$air','$dinding','$lantai','$berobat')";
+									 VALUES('$nama','$alamat',$jml,'$status','$pekerjaan','$pendidikan',$penghasilan,'$penerangan','$masak','$pakaian','$air','$dinding','$lantai','$berobat')";
 $input = mysqli_query($koneksi,$query);
 if(!$input){
 	echo "Error: ". mysqli_error($koneksi);
