@@ -1,6 +1,5 @@
 <?php
-	include('layout/menu_contents/navbar.php');
-	include('layout/menu_contents/sidebar.php');
+	
 
 ?>
 <div class="main-panel">
@@ -131,6 +130,5 @@
 <?php 
 	}
 	echo "</section>";
-	include('layout/menu_contents/footer.php');
-	include('layout/menu_contents/plugins.php');
+	
 ?>

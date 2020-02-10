@@ -517,7 +517,6 @@ function showTabelPerbandingan($jenis,$kriteria) {
 		for ($y=($x+1); $y <= ($n - 1) ; $y++) {
 
 			$urut++;
-
 	?>
 			<tr>
 				<td>

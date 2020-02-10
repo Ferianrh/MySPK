@@ -3,8 +3,8 @@
 include('config.php');
 include('fungsi.php');
 
-include('layout/menu_contents/navbar.php');
-	include('layout/menu_contents/sidebar.php');
+include_once('layout/menu_contents/navbar.php');
+	include_once('layout/menu_contents/sidebar.php');
 
 
 if (isset($_POST['submit'])) {
@@ -28,13 +28,10 @@ if (isset($_POST['submit'])) {
 			$urut++;
 			$pilih	= "pilih".$urut;
 			$bobot 	= "bobot".$urut;
-			if ($_POST[$pilih] == 1) {
+			
 				$matrik[$x][$y] = $_POST[$bobot];
 				$matrik[$y][$x] = 1 / $_POST[$bobot];
-			} else {
-				$matrik[$x][$y] = 1 / $_POST[$bobot];
-				$matrik[$y][$x] = $_POST[$bobot];
-			}
+			
 
 
 			if ($jenis == 'kriteria') {
@@ -103,7 +100,7 @@ if (isset($_POST['submit'])) {
 
 }
 
-include('layout/menu_contents/footer.php');
-include('layout/menu_contents/plugins.php');
+include_once('layout/menu_contents/footer.php');
+include_once('layout/menu_contents/plugins.php');
 
 ?>
