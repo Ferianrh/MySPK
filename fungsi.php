@@ -565,6 +565,15 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	<?php
 }
 
+function inputNilaiSub($val, $bobot){
+	$query = "update detail_kriteria where sub_kriteria ='".$val."' "."set bobot_nilai_kriteria= ".$bobot;
+	$res= mysqli_query($koneksi,$query);
+
+	if(!$res){
+		echo "Gagal Input bobot sub_kriteria";
+	}
+}
+
 function inputNilaiSubKriteria($kriteria) {
 
 	include('config.php');
@@ -584,12 +593,14 @@ function inputNilaiSubKriteria($kriteria) {
 	}
 
 		//header('Location: '.$jenis.'.php');
-	$query2= "select distinct ".$kriteria." from data_kepala_keluarga";
-	$result2 = mysqli_query($koneksi,$query2);
 
-	while($baris = mysqli_fetch_array($result2)){
-		$sub[] = $baris[0];
-	}
+
+	// $query2= "select ".$kriteria." from data_kepala_keluarga";
+	// $result2 = mysqli_query($koneksi,$query2);
+
+	// while($baris = mysqli_fetch_array($result2)){
+	// 	$sub[] = $baris['sub_kriteria'];
+	// }
 
 	// include('layout/menu_contents/navbar.php');
 	// include('layout/menu_contents/sidebar.php');
@@ -601,7 +612,7 @@ function inputNilaiSubKriteria($kriteria) {
 		<div class="card-body">
 			<section class="content">
 				<h2>Tambah <?php //echo $jenis?></h2>
-				<form class="ui form" method="post" action="bobot_subkriteria.php">
+				<form class="ui form" method="post" action="nilai_subkriteria.php">
 					<div class="form-group">
 						<label>Pilih Kriteria</label>
 						<select class="form-control" id="kriteria" name="subkriteria" onchange="showHint(this.value)">
@@ -612,52 +623,8 @@ function inputNilaiSubKriteria($kriteria) {
 							?>
 						</select>
 					</div>
-					<div class="form-group">
-						
-						<table class="table table-bordered">
-							<thead>
-								<tr>
-									<th>Sub-Kriteria</th>
-									<th>Nilai Bobot</th>
-								</tr>
-							</thead>
-						<tbody>
-
-						<?php
-						//inisialisasi
-						$urut = 0;
-						for ($x=0; $x <= ($n - 1); $x++) {
-							// for ($y=($x+1); $y <= ($n - 1) ; $y++) {
-							$urut++;
-						?>
-
-							<tr>
-								<td>
-									<div class="field" id="sub">
-										<label><?php echo $urut.'.'.$sub[$x] ?></label>
-										
-									</div>
-								</td>
-							
-								<td>
-									<div class="field">
-									
-										<input type="text" name="bobot<?php echo $urut?>" value="" required>
-									</div>
-								</td>
-							</tr>
-							<?php
-								}
-							
-							?>
-							
-						</tbody>
-						</table>
-
-					</div>
-					
 					<br>
-					<input class="ui green button" type="submit" name="tambah" value="SIMPAN">
+					<input class="ui green button" type="submit" name="pilih" value="pilih">
 				</form>
 			</section>
 		</div>
