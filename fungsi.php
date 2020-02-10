@@ -565,12 +565,30 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	<?php
 }
 
-function inputNilaiSub($val, $bobot){
-	$query = "update detail_kriteria where sub_kriteria ='".$val."' "."set bobot_nilai_kriteria= ".$bobot;
-	$res= mysqli_query($koneksi,$query);
+function inputNilaiSub($id,$val, $bobot){
+	include('config.php');
+	$que = "select id_kriteria from kriteria where nama_kriteria='".$id."'";
+	$has = mysqli_query($koneksi,$que);
+	while($bar = mysqli_fetch_array($has)){
+		$sel = $bar['id_kriteria'];
+	}
 
-	if(!$res){
-		echo "Gagal Input bobot sub_kriteria";
+	$cek = "select id_kriteria, sub_kriteria from detail_kriteria where id_kriteria= $sel and sub_kriteria ='".$val."'";
+	$rescek = mysqli_query($koneksi,$cek);
+	if(mysqli_num_rows($rescek)>0){
+
+		$query = "update detail_kriteria "."set bobot_sub_kriteria = ".$bobot." where id_kriteria = $sel and sub_kriteria ='".$val."'";
+		$res= mysqli_query($koneksi,$query);
+
+		if(!$res){
+			echo "Error : ".mysqli_error($koneksi) . "  first";
+		}
+	}else{
+		$query = "insert into detail_kriteria values($sel, '$val', $bobot )";
+		$res = mysqli_query($koneksi,$query);
+		if(!$res){
+			echo "Error : ".mysqli_error($koneksi). " second";
+		}
 	}
 }
 
@@ -615,7 +633,7 @@ function inputNilaiSubKriteria($kriteria) {
 				<form class="ui form" method="post" action="nilai_subkriteria.php">
 					<div class="form-group">
 						<label>Pilih Kriteria</label>
-						<select class="form-control" id="kriteria" name="subkriteria" onchange="showHint(this.value)">
+						<select class="form-control" id="kriteria" name="subkriteria" >
 							<?php
 								for($i=0;$i<count($nama);$i++){
 									echo  '<option>'.$nama[$i].'</option>';

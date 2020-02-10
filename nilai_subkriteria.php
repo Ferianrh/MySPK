@@ -16,7 +16,8 @@
 
     
     if(isset($_POST['pilih'])){
-        $val = str_replace(" ","_",$_POST['kriteria']);
+		$val_asli = $_POST['subkriteria'];
+        $val = str_replace(" ","_",$_POST['subkriteria']);
         $query = "SELECT distinct ".$val." from data_kepala_keluarga";
         $res = mysqli_query($koneksi, $query);
         $nilai = 0;
@@ -67,7 +68,7 @@
 								</tr>
 							</thead>
 						<tbody>
-
+						<input type="hidden" name="nm_kriteria" value="<?php echo $val_asli ?>">
 						<?php
                         //inisialisasi
                         echo $val;

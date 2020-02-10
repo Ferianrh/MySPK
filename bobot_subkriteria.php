@@ -4,12 +4,15 @@
 
 	include('layout/menu_contents/navbar.php');
 	include('layout/menu_contents/sidebar.php');
+	$kriteria = 'kriteria';
 
 	if(isset($_POST['Simpan'])){
 		$nilai = $_POST['val'];
-		$nilai = $_POST['bobot'];
-		for($i=0;$i<count()){
+		$bobot = $_POST['bobot'];
+		$nama = $_POST['nm_kriteria'];
 
+		for($i=0;$i<count($nilai);$i++){
+			inputNilaiSub($nama, $nilai[$i], $bobot[$i]);
 		}
 	}
 ?>
