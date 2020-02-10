@@ -4,6 +4,14 @@
 
 	include('layout/menu_contents/navbar.php');
 	include('layout/menu_contents/sidebar.php');
+
+	if(isset($_POST['Simpan'])){
+		$nilai = $_POST['val'];
+		$nilai = $_POST['bobot'];
+		for($i=0;$i<count()){
+
+		}
+	}
 ?>
 <div class="main-panel">
 <section class="content">
