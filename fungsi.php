@@ -578,17 +578,17 @@ function inputNilaiSubKriteria($kriteria) {
 	if ($kriteria == 'kriteria') {
 		$n = getJumlahKriteria();
 	} 
-
+	$n = getJumlahKriteria();
 	while ($row = mysqli_fetch_array($result)) {
 		$nama[] = $row['nama_kriteria'];
 	}
 
 		//header('Location: '.$jenis.'.php');
-	$query2= "select ".$kriteria." from data_kepala_keluarga";
+	$query2= "select distinct ".$kriteria." from data_kepala_keluarga";
 	$result2 = mysqli_query($koneksi,$query2);
 
 	while($baris = mysqli_fetch_array($result2)){
-		$sub[] = $baris['sub_kriteria'];
+		$sub[] = $baris[0];
 	}
 
 	// include('layout/menu_contents/navbar.php');
@@ -604,7 +604,7 @@ function inputNilaiSubKriteria($kriteria) {
 				<form class="ui form" method="post" action="bobot_subkriteria.php">
 					<div class="form-group">
 						<label>Pilih Kriteria</label>
-						<select class="form-control" id="kriteria" name="kriteria">
+						<select class="form-control" id="kriteria" name="subkriteria" onchange="showHint(this.value)">
 							<?php
 								for($i=0;$i<count($nama);$i++){
 									echo  '<option>'.$nama[$i].'</option>';
@@ -633,7 +633,7 @@ function inputNilaiSubKriteria($kriteria) {
 
 							<tr>
 								<td>
-									<div class="field">
+									<div class="field" id="sub">
 										<label><?php echo $urut.'.'.$sub[$x] ?></label>
 										
 									</div>
@@ -642,7 +642,7 @@ function inputNilaiSubKriteria($kriteria) {
 								<td>
 									<div class="field">
 									
-										<input type="text" name="bobot<?php echo $urut?>" value="<?php echo $nilai?>" required>
+										<input type="text" name="bobot<?php echo $urut?>" value="" required>
 									</div>
 								</td>
 							</tr>

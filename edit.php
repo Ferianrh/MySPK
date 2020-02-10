@@ -21,14 +21,14 @@
 		$jenis	= $_POST['jenis'];
 		$nama 	= $_POST['nama'];
 
-		$query 	= "UPDATE $jenis SET nama='$nama' WHERE id=$id";
+		$query 	= "UPDATE $jenis SET nama_kriteria='$nama' WHERE id_kriteria=$id";
 		$result	= mysqli_query($koneksi, $query);
 
 		if (!$result) {
 			echo "Update gagal";
 			exit();
 		} else {
-			header('Location: '.$jenis.'.php');
+			header('Location: view_criteria.php');
 			exit();
 		}
 	}

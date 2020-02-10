@@ -99,7 +99,7 @@ for ($i=0; $i <= ($jmlAlternatif-1); $i++) {
 		</thead>
 		<tbody>
 			<?php
-				$query  = "SELECT id,nama,id_alternatif,nilai FROM alternatif,ranking WHERE alternatif.id = ranking.id_alternatif ORDER BY nilai DESC";
+				$query  = "SELECT d.id_penduduk,nama,r.id_penduduk,nilai FROM data_kepala_keluarga d ,ranking r WHERE d.id_penduduk = r.id_penduduk ORDER BY nilai DESC";
 				$result = mysqli_query($koneksi, $query);
 
 				$i = 0;

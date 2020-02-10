@@ -4,13 +4,15 @@
 
 	include('layout/menu_contents/navbar.php');
 	include('layout/menu_contents/sidebar.php');
+
+	$kriteria = $_post['kriteria'];
 ?>
 <div class="main-panel">
 <section class="content">
 	<div class="card">
 		<div class="card-body">
 		<h2 class="ui header">Pembobotan Sub-Kriteria</h2>
-	    <?php inputNilaiSubKriteria('kriteria'); ?>
+	    <?php inputNilaiSubKriteria($kriteria); ?>
 		</div>
 	</div>
 
