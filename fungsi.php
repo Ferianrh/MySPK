@@ -480,7 +480,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 		while ($row = mysqli_fetch_array($result)) {
 			$pilihan[] = $row['nama_kriteria'];
 		}
-	}elseif($kriteria == 'data_kepala_keluarga'){
+	} elseif($kriteria == 'data_kepala_keluarga'){
 		$query = "SELECT nama FROM $kriteria ORDER BY id_penduduk";
 		$result	= mysqli_query($koneksi, $query);
 		if (!$result) {
@@ -577,14 +577,19 @@ function inputNilaiSubKriteria($kriteria) {
 
 	if ($kriteria == 'kriteria') {
 		$n = getJumlahKriteria();
-	}
+	} 
 
 	while ($row = mysqli_fetch_array($result)) {
 		$nama[] = $row['nama_kriteria'];
 	}
 
 		//header('Location: '.$jenis.'.php');
-	
+	$query2= "select ".$kriteria." from data_kepala_keluarga";
+	$result2 = mysqli_query($koneksi,$query2);
+
+	while($baris = mysqli_fetch_array($result2)){
+		$sub[] = $baris['sub_kriteria'];
+	}
 
 	// include('layout/menu_contents/navbar.php');
 	// include('layout/menu_contents/sidebar.php');
@@ -629,8 +634,8 @@ function inputNilaiSubKriteria($kriteria) {
 							<tr>
 								<td>
 									<div class="field">
-										<label><?php $urut ?></label>
-										<label><?php $nama[$x] ?></label>
+										<label><?php echo $urut.'.'.$sub[$x] ?></label>
+										
 									</div>
 								</td>
 							
