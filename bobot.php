@@ -76,7 +76,8 @@
 			<tbody>
 			<?php 
 				$urut = 0 ;
-			for($i=0;$i<= $n-1;$i++){ 
+				for ($x=0; $x <= ($n - 2); $x++) {
+					for ($y=($x+1); $y <= ($n - 1) ; $y++) { 
 				$urut++;
 				?>
 			<tr>
@@ -84,7 +85,7 @@
 					<div class="field">
 						<div class="">
 							<!-- <input name="pilih<?php // echo $urut?>" value="1" checked="" class="hidden" type="radio"> -->
-							<label><?php echo $pilihan[$i]; ?></label>
+							<label><?php echo $pilihan[$x].'/'.$pilihan[$y]; ?></label>
 						</div>
 					</div>
 				</td>
@@ -92,20 +93,24 @@
 					<div class="field">
 						<div class="">
 							<!-- <input name="pilih<?php // echo $urut?>" value="1" checked="" class="hidden" type="radio"> -->
-							<label><?php echo $data[$i]; ?></label>
+							<label><?php echo $data[$x].'/'.$data[$y]; ?></label>
 						</div>
 					</div>
 				</td>
 				<td>
 					<div class="field">
 						<div class="">
-							<label><?php echo $data1[$i]; ?></label>
-							<input type="text" name="bobot<?php echo $urut?>" value="<?php echo $data1[$i]?>" hidden>
+							<label><?php echo $data1[$x].'/'.$data1[$y]; ?></label>
+							<input type="text" name="bobot<?php echo $urut?>" value="<?php echo $data1[$x]/$data1[$y]?>" hidden>
 						</div>
 					</div>
 				</td>
 			</tr>
-			<?php } ?>
+			<?php 
+		
+			} 
+		}
+		?>
 			</tbody>
 		</table>
 		<input type="text" name="jenis" value="<?php echo $jenis; ?>" hidden>

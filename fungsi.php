@@ -546,7 +546,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	}
 
 	?>
-						<input type="text" name="bobot<?php echo $urut?>" value="<?php echo $nilai?>" required>
+						<input type="text" name="bobot[]" value="<?php echo $nilai?>" required>
 					</div>
 				</td>
 			</tr>
